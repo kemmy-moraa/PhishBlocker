@@ -43,10 +43,13 @@ body {
 .signup-container input[type="email"],
 .signup-container input[type="password"] {
     width: 100%;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    /* border: 1px solid #ccc; */
+    border: none;
+    border-radius: 7px;
     font-size: 16px;
 }
 

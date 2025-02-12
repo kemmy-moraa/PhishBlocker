@@ -13,19 +13,19 @@ body {
 }
 .logo {
     position: absolute;
-    top: 10px;
+    top:0px;
     left: 10px;
 }
 
 .logo img {
-    width: 130px;
+    width: 100px;
     height: 100px; 
     border-radius: 50%;
     object-fit: cover;
 }
 .user-profile {
     position: absolute; 
-    top: 10px;        /* Adjust top position as needed */
+    top: 12px;        /* Adjust top position as needed */
     right: 10px;       /* Adjust right position as needed */
 }
 
@@ -53,7 +53,7 @@ body {
     margin-bottom: 40px;
     margin-top: 40px;
     text-align: center;
-    font-size: 24px;
+    font-size: 27px;
     color: #333;
 }
 
@@ -61,23 +61,24 @@ body {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #555;
+    color: #312f2f;
 }
 
 .signup-container button {
-    width: 100%;
+    width: 70%;
     background-color: #835ADC;
     border: none;
-    padding: 10px 20px;
-    font-size: 0.9em; 
-    border-radius: 4px;
+    padding: 20px 0px;
+    font-size: 1.3em; 
+    border-radius: 10px;
     color: #fff;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 25px 0;
+    margin-left: 60px;
 }
 
 .signup-container button:hover {
-    background-color: #5b2bc2;
+    background-color: #281c44;
 }
 
 .signup-container .login-link {
@@ -88,8 +89,4 @@ body {
 .signup-container .login-link a {
     color: #581ed4;
     text-decoration: none;
-}
-
-.signup-container .login-link a:hover {
-    text-decoration: underline;
 }

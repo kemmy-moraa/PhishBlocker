@@ -9,6 +9,9 @@ body {
     height: 100vh;
     margin: 0;
     background-size: cover;
+    .center-text {
+  text-align: center;
+}
 }
 
 .signup-container {
@@ -58,30 +61,31 @@ body {
 }
 
 .signup-container button {
-    width: 100%;
+    width: 103%;
     padding: 10px;
+    margin-top: 10px;
     background-color: #835ADC;
     border: none;
-    border-radius: 4px;
+    border-radius: 7px;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
 }
 
 .signup-container button:hover {
-    background-color: #5b2bc2;
+    background-color: #281c44;
 }
 
-.signup-container .login-link {
+.signup-container .signup-link {
     text-align: center;
     margin-top: 15px;
 }
 
-.signup-container .login-link a {
+.signup-container .signup-link a {
     color: #581ed4;
     text-decoration: none;
 }
 
-.signup-container .login-link a:hover {
+.signup-container .signup-link a:hover {
     text-decoration: underline;
 }

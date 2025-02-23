@@ -14,12 +14,13 @@ Welcome to PhishBlocker, an AI driven phishing detection system that detects dee
 
 ## Set up a virtual environment 
 python -m venv venv
+
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-cd backend/phishblocker 
+
 
 ## Install dependencies
 pip install -r requirements.txt
 
 
 ## Run the application
-python manage.py runsever
+python manage.py runserver

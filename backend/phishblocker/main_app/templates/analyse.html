@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/analyse.css' %}">
+{% endblock %}
+
+{% block content %}
+<body style="background-image: url(../static/media/pb.png);">
+  <div class="header">
+    <div class="logo">
+      <img src="{% static 'media/pb2-removebg-preview.png' %}" alt="PhishBlocker Logo">
+    </div>
+    <div class="user-profile">
+      <img src="{% static 'media/images-removebg-preview.png' %}" alt="Profile Icon">
+    </div>
+  </div>
+
+  <div class="signup-container">
+    <h2>Welcome to PhishBlocker</h2>
+    <form>
+      <!-- Hidden File Input -->
+      <input type="file" id="fileInput" accept="image/*" style="display: none;">
+      
+      <!-- Upload Button -->
+      <button type="button" id="uploadButton">Upload Image</button>
+      
+      <!-- Analyze Button -->
+      <button type="button" id="analyzeButton">Analyze</button>
+
+      <!-- Image Preview (Small Thumbnail) -->
+      <div id="imagePreview"></div>
+
+      <!-- Toast Notification Container -->
+      <div id="toastContainer"></div>
+    </form>
+  </div>
+
+<script src="{% static 'js/analyse.js' %}"></script>
+</body>
+{% endblock %}

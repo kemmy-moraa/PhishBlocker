@@ -1,0 +1,111 @@
+body {
+    background-image: url(images/pb.png);
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px; 
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-profile {
+    position: absolute; 
+    top: 12px;
+    right: 10px;
+}
+
+.user-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.signup-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    backdrop-filter: blur(15px);
+    text-align: center;
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 27px;
+    color: #333;
+}
+
+.signup-container button {
+    width: 70%;
+    background-color: #835ADC;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: 0.3s ease;
+}
+
+.signup-container button:hover {
+    background-color: #281c44;
+}
+
+/* Image Preview Styling */
+#imagePreview {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#imagePreview img {
+    width: 80px; /* Small Thumbnail */
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Toast Notification Styling */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 15px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+}

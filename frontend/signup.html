@@ -5,12 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - PhishBlocker</title>
     <link rel="stylesheet" href="signup.css"> 
+    <style>
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 15px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <div class="signup-container">
-       
         <h2>PhishBlocker Sign up</h2>
-        <form>
+        <form id="signupForm">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Kemmy" required>
 
@@ -22,9 +45,58 @@
 
             <button type="submit">Sign up</button>
         </form>
-        <div class="signup-link"> <br>
+        <div class="signup-link">
             Already have an account? <a href="login.html">Login</a>
         </div>
     </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA5NdLEzUUzo-l3XDsF9JYaW1XaE9bWgrA",
+            authDomain: "phishblocker-1e3fb.firebaseapp.com",
+            projectId: "phishblocker-1e3fb",
+            storageBucket: "phishblocker-1e3fb.appspot.com",
+            messagingSenderId: "508976899342",
+            appId: "1:508976899342:web:b878076d6579b5434c635f",
+            measurementId: "G-W2F23FS5RZ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        function showToast(message, isError = false) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.style.backgroundColor = isError ? "#D9534F" : "#5CB85C";
+            toast.classList.add("show");
+            
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000);
+        }
+
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    showToast("✅ User registered successfully!");
+                    setTimeout(() => {
+                        window.location.href = "login.html";
+                    }, 2000);
+                })
+                .catch((error) => {
+                    showToast("❌ Error!! Email already in use", true);
+                });
+        });
+    </script>
 </body>
 </html>
